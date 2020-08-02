@@ -1,0 +1,13 @@
+Mx\servlet\DictionaryTagServlet.class
+Mx\model\Dictionary.class
+Mx\servlet\StudentServlet.class
+Mx\util\JSONUtil.class
+Mx\servlet\StudentAddServlet.class
+Mx\servlet\StudentQueryByldServlet.class
+Mx\servlet\AbstractBaseServlet.class
+Mx\servlet\LoginSrevlet.class
+Mx\servlet\StudentUpdateServlet.class
+Mx\util\DBUtil.class
+Mx\model\Response.class
+Mx\servlet\StudentDeleteSrevlet.class
+Mx\servlet\ClassesQueryAsDict.class
