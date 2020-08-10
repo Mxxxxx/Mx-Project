@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--构造一个无参的构造方法，创建一个对象，如果该类型没有无参构造方法，就会报错-->
+    <!-- 通过bean标签定义bean对象，Spring bean容器通过id进行管理  如果没有提供id，默认以首字母小写为id  -->
+
+    <bean id="bit" class="java.lang.String">
+        <constructor-arg value="你好"></constructor-arg>
+    </bean>
+    <!--DI 依赖注入，为bean对象注入依赖属性
+      构造方法注入-->
+    <bean id="myName" class="java.lang.String">
+        <constructor-arg value="小比特"/>
+    </bean>
+    <!--属性注入-->
+    <bean id="duck" class="Mx.Duck">
+        <property name="name" value="鸭子"/>
+        <property name="age" value="15"/>
+    </bean>
+
+    <bean id="duck2" class="Mx.Duck2">
+        <constructor-arg name="n" value="啊"/>
+        <constructor-arg name="a" value="5"/>
+    </bean>
+</beans>
