@@ -14,14 +14,59 @@
     <bean id="myName" class="java.lang.String">
         <constructor-arg value="小比特"/>
     </bean>
+
+
+    <bean id="s1" class="java.lang.String">
+        <constructor-arg value="鸭子"></constructor-arg>
+    </bean>
+
     <!--属性注入-->
-    <bean id="duck" class="Mx.Duck">
-        <property name="name" value="鸭子"/>
-        <property name="age" value="15"/>
+    <bean id="duck11" class="Mx.Duck">
+        <property name="name" ref="s1"/>
+        <property name="age" value="13"/>
+    </bean>
+    <bean id="duck12" class="Mx.Duck">
+        <property name="name" ref="s1"/>
+        <property name="age" value="14"/>
+    </bean>
+    <bean id="duck13" class="Mx.Duck">
+        <property name="name" ref="s1"/>
+        <property name="age" value="12"/>
+    </bean>
+
+    <bean id="shop" class="Mx.DuckShop">
+        <property name="ducks">
+            <list>
+                <ref bean="duck11"/>
+                <ref bean="duck12"/>
+                <ref bean="duck13"/>
+            </list>
+        </property>
     </bean>
 
     <bean id="duck2" class="Mx.Duck2">
         <constructor-arg name="n" value="啊"/>
         <constructor-arg name="a" value="5"/>
     </bean>
+
+    <!--    =========================================-->
+
+    <bean id="duck31" class="Mx.Duck3">
+        <property name="name" value="北京烤鸭"/>
+        <property name="age" value="2"/>
+        <property name="next" ref="duck32"/>
+    </bean>
+
+    <bean id="duck32" class="Mx.Duck3">
+        <property name="name" value="甜鸭"/>
+        <property name="age" value="1"/>
+        <property name="next" ref="duck33"/>
+    </bean>
+
+    <bean id="duck33" class="Mx.Duck3">
+        <property name="name" value="酱鸭"/>
+        <property name="age" value="3"/>
+    </bean>
+
+
 </beans>

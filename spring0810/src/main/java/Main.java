@@ -38,11 +38,18 @@ public class Main {
         System.out.println(o);
         System.out.println("=========");
 
-        Object duck = context.getBean("duck");
-        System.out.println(duck);
-        System.out.println("==========");
+//        Object duck = context.getBean("duck");
+//        System.out.println(duck);
+//        System.out.println("==========");
 
         Object duck2 = context.getBean("duck2");
         System.out.println(duck2);
+        System.out.println("===");
+        Object duck3 = context.getBean("duck31");
+        System.out.println(duck3);
+
+        System.out.println("===");
+        Object shop = context.getBean("shop");
+        System.out.println(shop);
     }
 }
