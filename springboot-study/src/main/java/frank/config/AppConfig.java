@@ -1,8 +1,8 @@
 package frank.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import frank.Model.User;
-import frank.config.interceptor.Logininterceptor;
+import frank.config.interceptor.LoginInterceptor;
+import frank.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,64 +12,56 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @Author Meng Xin
- * @Date 2020/8/12 21:21
- */
 @Configuration
-public class AppConfig implements WebMvcConfigurer {//web框架执行初始化工作时，调用该接口
+public class AppConfig implements WebMvcConfigurer {//web框架，执行初始化工作的时候，会调用接口方法
+
     @Autowired
     private ObjectMapper objectMapper;
 
     /**
-     * 拦截器
-     * <p>
-     * /* ：代表一级路径，如 /user/* 可以匹配到 user/abc ，不能匹配到user/abc/a
-     * /**：代表多级路径  /**表示拦截模糊匹配   静态资源也会被拦截
-     *
+     * 添加web配置：添加拦截器（根据路径进行拦截）
+     * /*：代表一级的路径，如/user/*，可以匹配到/user/abc，不能匹配/user/abc/1
+     * /**：代表多级的路径
+     * 注意：静态资源也会被拦截到
      * @param registry
      */
     @Override
-    public void addInterceptors(InterceptorRegistry registry) {//
-        //实现一个用户会话管理功能
-        registry.addInterceptor(new Logininterceptor(objectMapper))//链式方法调用：当前类型的方法返回值还是时this
+    public void addInterceptors(InterceptorRegistry registry) {
+        //实现用户会话管理的功能
+        registry.addInterceptor(new LoginInterceptor(objectMapper))//链式方法设计：当前类型的方法，返回值就是this
                 .addPathPatterns("/user/**")//添加要拦截的路径
                 .excludePathPatterns("/user/login");//排除的路径
     }
 
     @Bean
-    //以返回值做为bean 注册到容器中
-    public Map<String, String> test1() {
-        Map<String, String> map = new HashMap<>();
-        map.put("nih", "a");
-        map.put("as", "sasa");
-        map.put("saa", "sas");
+    public Map<Integer, String> test1(){
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "测试1下");
+        map.put(2, "测试2下");
         return map;
     }
 
     @Bean
-    //以返回值做为bean 注册到容器中
-    public Map<Integer, Integer> test2() {
-        Map<Integer, Integer> map = new HashMap<>();
-        map.put(1, 1);
-        map.put(2, 2);
-        map.put(3, 3);
+    public Map<Integer, String> test2(){
+        Map<Integer, String> map = new HashMap<>();
+        map.put(3, "测试3下");
+        map.put(4, "测试4下");
         return map;
     }
 
     @Bean
-    public User user1() {
+    public User user1(){
         User u = new User();
-        u.setUsername("小红");
-        u.setPassword("199846");
+        u.setUsername("北郊小比特");
+        u.setPassword("123");
         return u;
     }
 
     @Bean
-    public User user2() {
+    public User user2(){
         User u = new User();
-        u.setUsername("小名");
-        u.setPassword("198463");
+        u.setUsername("邮电小比特");
+        u.setPassword("456");
         return u;
     }
 }
