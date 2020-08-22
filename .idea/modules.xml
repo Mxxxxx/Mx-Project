@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/image1/java_image_server (2).iml" filepath="$PROJECT_DIR$/image1/java_image_server (2).iml" />
+      <module fileurl="file://$PROJECT_DIR$/out/out.iml" filepath="$PROJECT_DIR$/out/out.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring0810/spring0810.iml" filepath="$PROJECT_DIR$/spring0810/spring0810.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-study/springboot-study.iml" filepath="$PROJECT_DIR$/springboot-study/springboot-study.iml" />
       <module fileurl="file://$PROJECT_DIR$/../stu-info-sys/stu-info-sys.iml" filepath="$PROJECT_DIR$/../stu-info-sys/stu-info-sys.iml" />

@@ -2,7 +2,9 @@
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/../stu-info-sys" />
+    <file type="web" url="file://$PROJECT_DIR$/image1" />
     <file type="web" url="file://$PROJECT_DIR$/spring-0810" />
+    <file type="web" url="file://$PROJECT_DIR$/电台" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -12,6 +14,7 @@
         <option value="$PROJECT_DIR$/spring0810/pom.xml" />
         <option value="$PROJECT_DIR$/电台/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-study/pom.xml" />
+        <option value="$PROJECT_DIR$/image1/pom.xml" />
       </list>
     </option>
   </component>
